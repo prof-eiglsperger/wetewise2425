@@ -58,6 +58,13 @@ module.exports = {
       //  sails_datastores__default__url=mysql://admin:myc00lpAssw2D@db.example.com:3306/my_prod_db
       //  ```
       //--------------------------------------------------------------------------
+      // adapter: 'sails-mysql',
+      // url: 'mysql://user:password@host:port/database',
+      adapter: 'sails-mysql',
+      host: '193.196.53.194',
+      port: 33061,
+      user: 'user0_prod', // replace  
+      database: 'mycamping_prod' // replace 
 
       /****************************************************************************
       *                                                                           *
@@ -265,10 +272,7 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
-    //   'https://staging.example.com',
-    // ],
+    onlyAllowOrigins: [ ],
 
 
     /***************************************************************************
@@ -340,7 +344,7 @@ module.exports = {
     * (https://sailsjs.com/config/http)                                        *
     *                                                                          *
     ***************************************************************************/
-    // trustProxy: true,
+    trustProxy: true,
 
   },
 
