@@ -24,6 +24,13 @@ module.exports = {
     req.session.user = user;
     return res.json(user);
   },
+  sessionUser: async function (req, res) {
+    let user = req.session.user;
+    if (!user) {
+      res.status(403);
+    }
+    return res.json(user);
+  },
   register: async function (req, res) {
     let params = req.body;
     let newEmailAddress = params.emailAddress.toLowerCase();
@@ -41,7 +48,8 @@ module.exports = {
     return res.json(user);
   },
   logout: async function (req, res) {
-    delete this.req.session.userId;
+    delete req.session.user;
+    delete req.session.userId;
     return res.ok();
   },
 };

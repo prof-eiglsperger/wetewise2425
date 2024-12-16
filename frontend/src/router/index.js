@@ -3,7 +3,15 @@ import { useUserStore } from "../stores/user";
 import LoginView from '../views/LoginView.vue'
 import SignUpView from '../views/SignUpView.vue'
 import HomeView from '../views/HomeView.vue'
+import AdminView from '../views/AdminView.vue'
 import RestrictedView from '../views/RestrictedView.vue'
+import NewCategoryView from "../views/NewCategoryView.vue";
+import AboutView from "../views/AboutView.vue";
+import CategoryView from "../views/CategoryView.vue";
+import CategoriesView from "../views/CategoriesView.vue";
+import LocationView from "../views/LocationView.vue";
+import LocationsView from "../views/LocationsView.vue";
+import NewLocationView from "../views/NewLocationView.vue";
 
 
 const router = createRouter({
@@ -15,12 +23,42 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: '/admin',
+      name: 'admin',
+      component: AdminView,
+    },
+    {
+      path: "/new",
+      component: NewCategoryView,
+    },
+    {
+      path: "/newLocation",
+      component: NewLocationView,
+    },
+    {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      component: AboutView,
+    },
+    {
+      path: "/categories",
+      name: "categories",
+      component: CategoriesView,
+    },
+    {
+      path: "/categories/:id",
+      name: "category",
+      component: CategoryView,
+    },
+    {
+      path: "/location",
+      name: "locations",
+      component: LocationsView,
+    },
+    {
+      path: "/location/:id",
+      name: "location",
+      component: LocationView,
     },
     {
       path: '/login',

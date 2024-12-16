@@ -21,6 +21,7 @@ module.exports.routes = {
 
   'POST /login': "login.login",
   'POST /register': "login.register",
+  'GET /sessionUser': "login.sessionUser",
   'GET /logout': "login.logout",
   'GET /restricted': "restricted.example"
 

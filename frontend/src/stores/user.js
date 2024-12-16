@@ -9,13 +9,25 @@ export const useUserStore = defineStore("user", {
   }),
 
   actions: {
+    async fetchUser() {
+      if (this.user == null) {
+        const response = await axios.get("/sessionUser")
+        const user = response.data;
+        this.user = user;
+      }
+    },
+
     async signIn(email, password) {
       let loginInformation = { emailAddress: email, password: password };
       axios
         .post("/login", loginInformation)
         .then((response) => {
           this.user = response.data;
-          router.push("/restricted");
+          if (this.user.isSuperAdmin) {
+            router.push("/admin");
+          } else {
+            router.push("/restricted");
+          }
         })
         .catch((error) => {
           console.error("Login failed:", error);
@@ -37,7 +49,8 @@ export const useUserStore = defineStore("user", {
           console.error("Login failed:", error);
         });
     },
-    logout() {
+    async logout() {
+        const response = await axios.get("/logout")
         this.user = null;
     }
   },

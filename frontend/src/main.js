@@ -1,4 +1,6 @@
 import './assets/main.css'
+import './assets/bootstrap-green.min.css'
+
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

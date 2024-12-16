@@ -1,20 +1,26 @@
 <script setup>
-defineProps({
-  msg: {
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true
+  },
+  name: {
     type: String,
-    required: true,
+    required: true
   },
 })
+function showDetails() {
+  router.push({ name: 'categories', params: { "id": props.id } })
+}
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div>
+    <h2>{{ name }}</h2>
+    <button @click="showDetails">More Info</button>
   </div>
 </template>
 
@@ -36,6 +42,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
