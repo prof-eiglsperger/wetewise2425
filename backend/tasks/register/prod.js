@@ -14,7 +14,7 @@
 module.exports = function(grunt) {
   grunt.registerTask('prod', [
     // 'polyfill:dev', //« uncomment to ALSO transpile during development (for broader browser compat.)
-    //'compileAssets',
+    'compileAssets',
     // 'babel',        //« uncomment to ALSO transpile during development (for broader browser compat.)
     'linkAssets',
     //'watch'

@@ -18,6 +18,7 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
+  '/': { view: 'pages/homepage' },
 
   'POST /login': "login.login",
   'POST /register': "login.register",
