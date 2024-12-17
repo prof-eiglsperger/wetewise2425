@@ -38,4 +38,27 @@ module.exports.bootstrap = async function() {
       password: await sails.helpers.passwords.hashPassword("123456")},
  //   // etc.
  ]);
+
+  if (await Location.count() > 0) {
+     return;
+  }
+  
+  await Location.createEach([
+    { "name": "beach", "description": "Nice location near the beach" },
+    { "name": "forest", "description": "Nice location in the forest" }
+  ]);
+
+  await Category.createEach([
+    {
+      "name": "Forest Edge",
+      "description": "A serene pitch located at the edge of the forest, ideal for nature lovers and bird watchers.",
+      "location": "2"
+    },
+    { 
+      "name": "Sunny Meadow",
+      "description": "A spacious and sunny pitch in an open meadow, perfect for families and group camping.",
+      "location": "1"
+    }
+  ]);
+
 };

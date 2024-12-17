@@ -15,33 +15,18 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
-    <h2>{{ name }}</h2>
-  </div>
+   <tr>
+    <th scope="th">
+      {{ id  }}
+    </th>
+    <td>
+      {{ name }}
+    </td>
+    <td>
+      <button class="btn btn-sm btn-primary" >More Info</button>
+    </td>
+  </tr>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
 </style>

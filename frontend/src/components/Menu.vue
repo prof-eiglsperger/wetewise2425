@@ -8,8 +8,10 @@ onMounted(() => userStore.fetchUser());
 
 <template>
   <header class="navbar navbar-expand-sm  flex-column flex-md-row justify-content-between" purpose="page-header">
-    <a style="cursor: pointer;" class="navbar-brand mr-0" href="/"><img style="height: 40px;" class="logo"
+    <a v-if="userStore.user == null || !userStore.user.isSuperAdmin" style="cursor: pointer;" class="navbar-brand mr-0" href="/"><img style="height: 40px;" class="logo"
         alt="NEW_APP_NAME logo" src="/images/logo.png" /></a>
+    <RouterLink v-if="userStore.user != null && userStore.user.isSuperAdmin" style="cursor: pointer;" class="navbar-brand mr-0" to="/admin"><img style="height: 40px;" class="logo"
+      alt="NEW_APP_NAME logo" src="/images/logo.png" /></RouterLink>
     <div v-if="userStore.user == null" class="navbar-nav flex-row">
       <RouterLink class="btn btn-outline-primary nav-link ml-2 ml-md-0 mr-2" to="/login">Login</RouterLink>
       <RouterLink class="btn  btn-outline-primary" to="/signup">Sign up</RouterLink>

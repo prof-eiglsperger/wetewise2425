@@ -11,7 +11,7 @@ const description = ref();
 const location = ref();
 onMounted(() => {
   axios
-    .get('/category/'+route.params.id)
+    .get('/category/' + route.params.id)
     .then((response) => {
       const category = response.data
       name.value = category.name;
@@ -21,7 +21,7 @@ onMounted(() => {
 })
 function destroy() {
   axios
-    .delete('/category/'+route.params.id)
+    .delete('/category/' + route.params.id)
     .then((response) => {
       router.push("/")
     })
@@ -29,35 +29,26 @@ function destroy() {
 </script>
 
 <template>
-  <div>
+  <main class="container">
+    <div class="list">
       <h2>{{ name }}</h2>
+      <h5>Description</h5>
       <p>{{ description }}</p>
-      <p>Location: {{ location }}</p>
+      <h5>Location</h5>
+       <p>
+         {{ location }}
+       </p>
+      <button class="btn btn-primary" @click="destroy">Delete</button>
     </div>
-   <button @click="destroy">Delete</button>
+  </main>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+.list {
+  margin: 20px 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  /** background-color: #f9f9f9; */
 }
 </style>

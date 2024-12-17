@@ -3,15 +3,16 @@ import CategoryList from '@/components/CategoryList.vue';
 </script>
 
 <template>
-  <main>
-    <CategoryList />
-    <RouterLink  to="new"><button class="btn btn-primary" type="submit">New Pitch</button></RouterLink>
+  <main class="container">
+    <div class="list">
+      <CategoryList />
+      <RouterLink  to="new"><button class="btn btn-primary" type="submit">New Pitch</button></RouterLink>
+    </div>
   </main>
 </template>
 <style scoped>
-main {
-  max-width: 400px;
-  margin: 20px auto;
+.list {
+  margin: 20px 20px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;

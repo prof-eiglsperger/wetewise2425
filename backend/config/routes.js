@@ -23,8 +23,19 @@ module.exports.routes = {
   'POST /register': "login.register",
   'GET /sessionUser': "login.sessionUser",
   'GET /logout': "login.logout",
-  'GET /restricted': "restricted.example"
+  'GET /restricted': "restricted.example",
 
+
+  'POST /category': { controller: 'CategoryController', action:'create' },
+  'GET /category': 'category.find',
+  'GET /categoryJoin': 'category.findJoin',
+  'GET /category/:id': 'category.findOne',
+  'DELETE /category/:id': 'category.destroy',
+
+  'POST /location': 'location.create',
+  'GET /location': 'location.find',
+  'GET /location/:id': 'location.findOne',
+  'DELETE /location/:id': 'location.destroy'
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

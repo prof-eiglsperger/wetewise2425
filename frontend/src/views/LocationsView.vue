@@ -3,15 +3,16 @@ import LocationList from '@/components/LocationList.vue';
 </script>
 
 <template>
-  <main>
-    <LocationList />
-    <RouterLink to="newLocation"><button class="btn btn-primary" type="submit">New Location</button></RouterLink>
+  <main class="container">
+    <div class="list">
+      <LocationList />
+      <RouterLink to="newLocation"><button class="mt-4 btn btn-primary" type="submit">New Location</button></RouterLink>
+    </div>
   </main>
 </template>
 <style scoped>
-main {
-  max-width: 400px;
-  margin: 20px auto;
+.list {
+  margin: 20px 20px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;

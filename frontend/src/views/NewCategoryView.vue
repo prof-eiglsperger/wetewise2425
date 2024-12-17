@@ -54,7 +54,7 @@ const submitForm = () => {
       </div>
       <div class="form-group">
         <label for="pitchDescription">Location:</label>
-        <select name="location" v-model="newPitch.location">
+        <select class="custom-select" name="location" v-model="newPitch.location">
           <option v-for="location in locations" :value="location.id">{{ location.name }}</option>
         </select>
       </div>

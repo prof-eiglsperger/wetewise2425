@@ -13,14 +13,22 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="list">
+  <div>
     <h1>Camping Categories</h1>
-    <CategoryEntry v-for="category in categories" :name="category.name" :description="category.description" :id="category.id" />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <CategoryEntry v-for="category in categories" :name="category.name" :description="category.description" :id="category.id" />
+      </tbody>
+    </table>
   </div>
 </template>
 
 <style scoped>
-.list {
-  padding: 0.5rem;
-}
 </style>
