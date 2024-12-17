@@ -8,7 +8,13 @@ import axios from 'axios';
 import App from './App.vue'
 import router from './router'
 
-axios.defaults.baseURL = "http://localhost:1337";
+if (!import.meta.env.PROD) {
+    console.log("--> Development Mode")
+    axios.defaults.baseURL = "http://localhost:1337";
+} else {
+    console.log("--> Production Mode")
+    axios.defaults.baseURL = "/";
+}
 axios.defaults.withCredentials = true;
 
 const app = createApp(App)

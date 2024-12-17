@@ -14,6 +14,7 @@ export const useUserStore = defineStore("user", {
         const response = await axios.get("/sessionUser")
         const user = response.data;
         this.user = user;
+        return user;
       }
     },
 

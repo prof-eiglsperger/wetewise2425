@@ -23,8 +23,9 @@ module.exports.routes = {
   'POST /register': "login.register",
   'GET /sessionUser': "login.sessionUser",
   'GET /logout': "login.logout",
-  'GET /restricted': "restricted.example",
-
+  
+  'POST /quote': "reservation.quote",
+  'POST /book': "reservation.book",
 
   'POST /category': { controller: 'CategoryController', action:'create' },
   'GET /category': 'category.find',
